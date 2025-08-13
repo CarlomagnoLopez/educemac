@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEMAC - Centro Educativo Montessori</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <script>tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#017a6c',
+                        secondary: '#059669',
+                        accent: '#065f46',
+                        light: '#f0fdfa',
+                        dark: '#064e3b',
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50 border-b-2" style="border-color: #b71d87;">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- CEMAC Logo -->
+                <div class="flex items-center">
+                    <a href="index.html">
+
+                        <img src="./assets/CEMAC-Photoroom.png" alt="CEMAC Logo"
+                            class="logo-bounce w-12 h-12 mr-3 object-contain"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: block;">
+                    </a>
+
+                    <!-- <div class="logo-bounce w-12 h-12 mr-3 bg-primary rounded-lg flex items-center justify-center"
+						style="display: flex;">
+						<span class="text-white font-bold text-lg">C</span>
+					</div> -->
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">CEMAC - Taller - Primaria</h1>
+                        <!-- <p class="text-xs text-gray-600">Centro Educativo Montessori</p> -->
+                        <p class="text-xs text-gray-600">Nutriendo la mente y el corazon para un mundo mejor</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Inicio</a>
+                    <a href="#nosotros"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Nosotros</a>
+                    <a href="#programas"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Programas</a>
+                    <a href="#contacto"
+                        class="text-gray-700 hover:text-primary font-medium transition-colors duration-300">Contacto</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex flex-col items-center justify-center w-10 h-10 space-y-1 focus:outline-none">
+                    <span class="mobile-menu-line w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                    <span class="mobile-menu-line w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                    <span class="mobile-menu-line w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+
+        <!-- Menu Panel -->
+        <div class="absolute right-0 top-0 h-full w-80 max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out"
+            id="mobile-menu-panel">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <div class="flex items-center">
+                    <img src="./assets/CEMAC-Photoroom.png" alt="CEMAC Logo" class="w-8 h-8 mr-2 object-contain"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        style="display: none;">
+                    <div class="w-8 h-8 mr-2 bg-primary rounded-lg flex items-center justify-center"
+                        style="display: flex;">
+                        <span class="text-white font-bold text-sm">C</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-primary">CEMAC</h3>
+                        <p class="text-xs text-gray-600">Centro Educativo Montessori</p>
+                    </div>
+                </div>
+                <button id="mobile-menu-close"
+                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="py-6">
+                <a href="#inicio"
+                    class="mobile-nav-link flex items-center px-6 py-4 text-gray-700 hover:bg-light hover:text-primary transition-all duration-200 border-l-4 border-transparent hover:border-primary">
+                    <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Inicio</span>
+                </a>
+                <a href="#nosotros"
+                    class="mobile-nav-link flex items-center px-6 py-4 text-gray-700 hover:bg-light hover:text-primary transition-all duration-200 border-l-4 border-transparent hover:border-primary">
+                    <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">Nosotros</span>
+                </a>
+                <a href="#programas"
+                    class="mobile-nav-link flex items-center px-6 py-4 text-gray-700 hover:bg-light hover:text-primary transition-all duration-200 border-l-4 border-transparent hover:border-primary">
+                    <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z">
+                        </path>
+                    </svg>
+                    <span class="font-medium">Programas</span>
+                </a>
+                <a href="#contacto"
+                    class="mobile-nav-link flex items-center px-6 py-4 text-gray-700 hover:bg-light hover:text-primary transition-all duration-200 border-l-4 border-transparent hover:border-primary">
+                    <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <span class="font-medium">Contacto</span>
+                </a>
+            </nav>
+
+            <!-- Contact Info -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 border-t border-gray-200">
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">¿Tienes preguntas?</p>
+                    <a href="tel:+525512345678" class="text-primary font-medium text-sm hover:underline">+52 55 1234
+                        5678</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <section id="inicio" class="pt-20" style="background-color: #b71d87;">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track" style="transform: translateX(-25%);">
+                <!-- Slide 1 -->
+                <div class="carousel-slide slide-1">
+                    <div class="carousel-content ">
+                        <img src="./assets/primaria_v2/IMG_1.jpeg" alt="img1">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide slide-2">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_2.jpeg" alt="img2">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide slide-3">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_3.jpeg" alt="img3">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide slide-4">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_4.jpeg" alt="img4">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide slide-5">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_5.jpeg" alt="img5">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-slide slide-6">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_6.jpeg" alt="img6">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="carousel-slide slide-7">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_7.jpeg" alt="img7">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+                <!-- Slide 8 -->
+                <div class="carousel-slide slide-8">
+                    <div class="carousel-content">
+                        <img src="./assets/primaria_v2/IMG_8.jpeg" alt="img8">
+                        <h2 class="carousel-title">
+                            <p class="montessori-phrase"></p>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-btn carousel-btn-prev" id="prev-btn">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" id="next-btn">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="indicators">
+                <button class="carousel-indicator" data-slide="0"></button>
+                <button class="carousel-indicator active" data-slide="1"></button>
+                <button class="carousel-indicator" data-slide="2"></button>
+                <button class="carousel-indicator" data-slide="3"></button>
+                <button class="carousel-indicator" data-slide="4"></button>
+                <button class="carousel-indicator" data-slide="5"></button>
+                <button class="carousel-indicator" data-slide="6"></button>
+                <button class="carousel-indicator" data-slide="7"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4"><span class="text-accent">
+                            Taller<br></span> Primaria</h1>
+                    <section class="comunidad-infantil my-8 px-4">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                            <!-- ¿Qué ofrece CEMAC en esta etapa? -->
+                        </h2>
+
+
+                        <p class="text-gray-700 mb-4">
+                            En nuestros ambientes de Taller, cada grupo es acompañado por una <strong>Guía
+                                Montessori</strong> y una maestra de inglés que actúa como <strong>asistente
+                                bilingüe</strong>, comunicándose siempre en este idioma. Juntas observan y guían los
+                            procesos de desarrollo y aprendizaje de niñas y niños, promoviendo el crecimiento de seres
+                            humanos íntegros y comprometidos con su entorno.
+                        </p>
+
+                        <p class="text-gray-700">
+                            La etapa de Primaria Montessori se organiza en dos niveles: <strong>Taller I</strong> (1º a
+                            3º) y <strong>Taller II</strong> (4º a 6º). Ambos ambientes trabajan con las mismas áreas y
+                            materiales, adaptando la <strong>profundidad del contenido</strong> según el nivel de
+                            desarrollo, respetando los ritmos y potenciales de cada estudiante.
+                        </p>
+
+                    </section>
+
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#programas"
+                            class="btn-primary bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg text-center">Conoce
+                            nuestros programas</a>
+                        <a href="#contacto"
+                            class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-3 px-6 rounded-lg text-center transition duration-300">Agenda
+                            una visita</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-secondary rounded-full opacity-30"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-accent rounded-full opacity-30"></div>
+                        <img src="./assets/web_v2/taller_general.jpeg" alt="img1" class="imagen-moderna">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="bg-primary py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Educación de calidad</h3>
+                            <p class="text-light">Método Montessori certificado</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Desarrollo integral</h3>
+                            <p class="text-light">Formación académica y humana</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Comunidad educativa</h3>
+                            <p class="text-light">Familias y escuela unidas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="bg-primary py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+                    <!-- Vida Práctica -->
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <!-- Icono: mano -->
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 2a2 2 0 012 2v5h1V3a2 2 0 114 0v6h1V5a2 2 0 114 0v8a5 5 0 11-10 0V4a2 2 0 012-2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Vida Práctica</h3>
+                            <p class="text-light text-sm leading-snug">Autonomía · Orden</p>
+                        </div>
+                    </div>
+
+                    <!-- Sensorial -->
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <!-- Icono: ojo (sentidos) -->
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Sensorial</h3>
+                            <p class="text-light text-sm leading-snug">Forma · Enfoque</p>
+                        </div>
+                    </div>
+
+                    <!-- Lenguaje -->
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <!-- Icono: chat o mensaje -->
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M18 13V6a2 2 0 00-2-2H4a2 2 0 00-2 2v7a2 2 0 002 2h3v3l4-3h5a2 2 0 002-2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Lenguaje</h3>
+                            <p class="text-light text-sm leading-snug">Escritura · Escucha</p>
+                        </div>
+                    </div>
+
+                    <!-- Matemáticas -->
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <!-- Icono: calculadora -->
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 3a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H5zm2 4h10v2H7V7zm0 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H7v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Matemáticas</h3>
+                            <p class="text-light text-sm leading-snug">Cantidad · Signos</p>
+                        </div>
+                    </div>
+
+                    <!-- Áreas Culturales -->
+                    <div class="flex items-center">
+                        <div class="bg-white rounded-full p-3 mr-4">
+                            <!-- Icono: globo terráqueo -->
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-14a6 6 0 00-4.472 9.917l.944-.944A4.978 4.978 0 016 10c0-.764.172-1.486.478-2.122l.952.951A2.992 2.992 0 009 10c0 .257-.036.506-.104.741l.953.953A4.992 4.992 0 0011 4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Cultura</h3>
+                            <p class="text-light text-sm leading-snug">Ciencia · Arte</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="sensorial-lenguaje-matematicas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                Trabajo en Taller
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-secondary rounded-lg"></div>
+                        <img src="./assets/web_v2/filo5.jpeg" alt="Áreas Montessori" class="imagen-moderna2">
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4"></h3>
+                    <p class="text-gray-600 mb-6">
+                    <div>
+                        En esta etapa, niñas y niños muestran una curiosidad infinita, un pensamiento abstracto en
+                        crecimiento y una imaginación poderosa. Su deseo por explorar y comprender el mundo es profundo
+                        y auténtico
+                    </div>
+                    <br>
+                    <p>
+                        Nuestro modelo educativo se alinea con los Planes y Programas de Estudio de la SEP, permitiendo
+                        una evaluación respetuosa de los aprendizajes en los tres periodos establecidos por el
+                        calendario oficial.
+                    </p>
+                    <br>
+                    <p>
+                        Siguiendo el enfoque de Educación Cósmica propuesto por María Montessori, se presentan cinco
+                        grandes historias que despiertan asombro y dan sentido a su aprendizaje:
+                    </p>
+                    <br>
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-2 mr-4 mt-1">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">El origen del universo (El Dios sin manos)</h4>
+                                <!-- <p class="text-gray-600">
+                                    Con estos ejercicios aprenden a cuidar de sí mismos, de los demás y de su ambiente,
+                                    lo que les da seguridad y autoestima, además de desarrollar orden, concentración y
+                                    un pensamiento lógico que será la base para adquisiciones posteriores.
+                                </p> -->
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-2 mr-4 mt-1">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">La historia de la vida
+                                </h4>
+                                <!-- <p class="text-gray-600">
+                                    Materiales que aíslan cualidades como tamaño, forma o textura, ayudando a refinar
+                                    los sentidos y preparar el pensamiento abstracto, base para áreas como matemáticas o
+                                    geometría.
+                                </p> -->
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-2 mr-4 mt-1">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">La historia del ser humano</h4>
+                                <!-- <p class="text-gray-600">
+                                    A través del sonido, el vocabulario y el abecedario móvil, los niños descubren el
+                                    mundo de las palabras. La lectura y escritura surgen de manera espontánea, según el
+                                    ritmo de cada uno.
+                                </p> -->
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-2 mr-4 mt-1">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">La historia de la escritura</h4>
+                                <!-- <p class="text-gray-600">
+                                    Desde lo sensorial, se introduce el concepto de número, la relación entre cantidad y
+                                    símbolo y, gradualmente, las operaciones básicas, desarrollando pensamiento lógico y
+                                    concentración.
+                                </p> -->
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-2 mr-4 mt-1">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">La historia de los números</h4>
+                                <!-- <p class="text-gray-600">
+                                    Geografía, biología, arte e historia amplían su visión del mundo y despiertan el
+                                    interés por la diversidad de culturas, la naturaleza y el planeta que habitamos.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contacto"
+                        class="inline-block bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                        Conoce más sobre nuestro enfoque
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Programs Section -->
+    <section id="programas" class="py-16 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">Protagonistas de su
+                Propio Aprendizaje
+            </h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Niños y niñas que descubren el universo con
+                mente curiosa, manos activas y un corazón lleno de propósito</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden COMUNIDAD_INFANTIL">
+
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">
+                            Educación Física</h3>
+                        <a href="#contacto"
+                            class="low-dense inline-block w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <img src="./assets/portada/edu_fis_taller.jpg" alt="Primaria Montessori"
+                            class="object-cover w-full h-full" />
+                    </div>
+                </div>
+
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden CASA_NINOS">
+
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">Arte y Música
+                        </h3>
+                        <a href="#contacto"
+                            class="low-dense inline-block w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <img src="./assets/portada/mus_taller.jpg" alt="Casa de Niños"
+                            class="object-cover w-full h-full" />
+                    </div>
+                </div>
+
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden PRIMARIA">
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">Inglés
+                        </h3>
+                        <a href="https://www.canva.com/design/DAGeQkfrUVQ/LIlIDrGAwQstSwbse0yckA/watch?utm_content=DAGeQkfrUVQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha5602a53db" target="_blank"
+                            class="inline-block w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <img src="./assets/portada/ingles_taller.jpg" alt="Casa de Niños"
+                            class="object-cover w-full h-full" />
+
+                    </div>
+
+                </div>
+
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden PRIMARIA">
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">
+                            Talleres Vespertinos deportivos y artísticos (Opcionales)</h3>
+                        <a href="#contacto"
+                            class=" low-dense  w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <img src="./assets/portada/opt_taller.jpg" alt="Casa de Niños"
+                            class="object-cover w-full h-full" />
+
+                    </div>
+                </div>
+
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden SECUNDARIA">
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">Campamentos y
+                            salidas escolares</h3>
+                        <a href="#contacto"
+                            class=" low-dense  w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <img src="./assets/portada/camp_taller.jpg" alt="Casa de Niños"
+                            class="object-cover w-full h-full" />
+
+                    </div>
+                </div>
+
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden BACHILLERATO">
+                    <div class="p-6">
+                        <h3 class="text-xl section-title text-center font-semibold text-gray-800 mb-2">Certificación de
+                            <br> Cambridge
+                        </h3>
+                        <a href="#contacto"
+                            class=" low-dense  w-full text-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Más
+                            información</a>
+                    </div>
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <img src="./assets/portada/camb_taller.jpg" alt="Casa de Niños"
+                            class="object-cover w-full h-full" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">Contáctanos</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">¿Tienes preguntas sobre nuestros programas?
+                ¡Nos encantaría conocerte y mostrarte nuestras instalaciones!</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Información de Contacto</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-3 mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Dirección</h4>
+                                <p class="text-gray-600">Calle Cuauhtémoc 329, Santa María Tepepan, Xochimilco, 16020,
+                                    CDMX, México
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-3 mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Teléfonos</h4><br>
+                                <div class="grid gap-4">
+                                    <a class="btn-primary bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg text-center min-w-[280px] w-full max-w-[320px] mx-auto"
+                                        href="tel:+5215590278300">
+                                        Conmutador: 55 9027 8300
+                                    </a>
+                                    <a class="btn-primary bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg text-center min-w-[280px] w-full max-w-[320px] mx-auto"
+                                        href="tel:+5215556069282">
+                                        Admisiones: 55 5606 9282
+                                    </a>
+                                    <a class="btn-primary bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg text-center min-w-[280px] w-full max-w-[320px] mx-auto"
+                                        href="https://wa.me/5215545493138">
+                                        Whats App: 55 4549 3138
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="flex items-start">
+                            <div class="bg-light rounded-full p-3 mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+                                    </path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">info@cemac.edu.mx</p>
+                            </div>
+                        </div> -->
+
+                        <div class="flex items-start">
+                            <div class="bg-light rounded-full p-3 mr-4">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Horarios</h4>
+                                <p class="text-gray-600">Lunes a Viernes: 7:00 AM - 4:00 PM<br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+                    <!-- <p class="text-sm text-gray-500 mb-6 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                        <strong>Demo:</strong> Este formulario es solo para demostración. En una implementación real,
+                        necesitarías configurar un backend para procesar los mensajes.
+                    </p> -->
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+                                <input type="text" id="nombre" name="nombre"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    required="">
+                            </div>
+                            <div>
+                                <label for="telefono"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    required="">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                required="">
+                        </div>
+
+                        <div>
+                            <label for="programa" class="block text-sm font-medium text-gray-700 mb-2">Programa de
+                                Interés</label>
+                            <select id="programa" name="programa"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Selecciona un programa</option>
+                                <option value="comunidad-infantil">Comunidad Infantil (2-3 años)</option>
+                                <option value="casa-ninos">Casa de Niños (3-6 años)</option>
+                                <option value="taller-1">Taller 1 (6-9 años)</option>
+                                <option value="taller-2">Taller 2 (9-12 años)</option>
+                                <option value="secundaria">Secundaria (12-15 años)</option>
+                                <option value="preparatoria">Preparatoria (15-18 años)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Cuéntanos sobre tu interés en CEMAC..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-dark text-white font-medium py-3 px-6 rounded-lg transition duration-300">Enviar
+                            Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="./assets/CEMAC-Photoroom.png" alt="CEMAC Logo"
+                            class="logo-bounce w-10 h-10 mr-3 object-contain bg-white rounded-lg p-1"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: block;">
+
+                        <div>
+                            <h3 class="text-xl font-bold">CEMAC</h3>
+                            <!-- <p class="text-sm text-light">Centro Educativo Montessori</p> -->
+                        </div>
+                    </div>
+                    <p class="text-light">Nutriendo la mente y el corazon para un mundo mejor
+
+
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Programas</h4>
+                    <ul class="space-y-2 text-light">
+                        <li><a href="comunidad.html" class="hover:text-white transition duration-300">Comunidad
+                                Infantil</a>
+                        </li>
+                        <li><a href="casa_ninos.html" class="hover:text-white transition duration-300">Casa de Niños</a>
+                        </li>
+                        <li><a href="taller_1.html" class="hover:text-white transition duration-300">Taller 1</a></li>
+                        <li><a href="taller_1.html" class="hover:text-white transition duration-300">Taller 2</a></li>
+                        <li><a href="secundaria.html" class="hover:text-white transition duration-300">Secundaria</a>
+                        </li>
+                        <li><a href="bachillerato.html"
+                                class="hover:text-white transition duration-300">Preparatoria</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Enlaces</h4>
+                    <ul class="space-y-2 text-light">
+                        <li><a href="#inicio" class="hover:text-white transition duration-300">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition duration-300">Nosotros</a></li>
+                        <li><a href="#programas" class="hover:text-white transition duration-300">Programas</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition duration-300">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Síguenos</h4>
+                    <!-- Asegúrate de incluir Font Awesome en tu <head> -->
+
+                    <div class="text-white">
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/CEMACComunidadEducativaMontessori" target="_blank"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3Fnext%3D%252F%26hl%3Des%26__coig_login%3D1#" target="_blank"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=mSnfMogT2rs&t=11s" target="_blank"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-youtube text-white"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@cemac0329" target="_blank"
+                                class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition duration-300">
+                                <i class="fab fa-tiktok text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
